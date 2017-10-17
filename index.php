@@ -1,7 +1,7 @@
 <?php
 
 try {
-    $db = new PDO('mysql:host=localhost;dbname=joinvasc;charset=utf8',
+    $db = new PDO('mysql:host=localhost;dbname=database_name;charset=utf8',
                     'root',
                     '');
 
@@ -15,7 +15,7 @@ catch(PDOException $ex) {
 header('Content-Type: text/csv');
 header('Content-Disposition: attachment;filename=joinvasc.csv');
 
-$sql = "SELECT * FROM options;";
+$sql = "SELECT * FROM table;";
 
 $sth = $db->prepare($sql);
 $sth->execute();
